@@ -224,7 +224,6 @@ return {
                 if vim.tbl_contains(buf_triggers, prev_char) then
                   vim.defer_fn(function()
                     vim.lsp.buf.signature_help({
-                      border = true,
                       focusable = false,
                       focus = false,
                     })
@@ -233,7 +232,6 @@ return {
                 elseif prev_char == ' ' and vim.tbl_contains(buf_triggers, prev_prev_char) then
                   vim.defer_fn(function()
                     vim.lsp.buf.signature_help({
-                      border = true,
                       focusable = false,
                       focus = false,
                     })
