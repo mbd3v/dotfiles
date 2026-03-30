@@ -79,6 +79,10 @@ if [ -d /home/$USER/go/bin ]; then
     export PATH=$PATH:/home/$USER/go/bin
 fi
 
+if [ -S /home/$USER/.bitwarden-ssh-agent.sock ]; then
+    export SSH_AUTH_SOCK=/home/$USER/.bitwarden-ssh-agent.sock
+fi
+
 
 # If you are using GWSL and not using Windows 11 and not using WSL Version 2 for your 
 # linux distrobution, then uncomment the following two lines to enable the use of

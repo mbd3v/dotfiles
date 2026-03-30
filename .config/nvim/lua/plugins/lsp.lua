@@ -74,7 +74,8 @@ return {
                 vim.lsp.config('gopls', {
                     settings = {
                         gopls = {
-                            gofumpt = false --disable go format
+                            gofumpt = false, --disable go format
+                            buildFlags = {"-tags=integration"},
                         }
                     },
                 })
