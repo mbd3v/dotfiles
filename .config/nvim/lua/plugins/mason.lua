@@ -29,7 +29,7 @@ return {
     },
     {
         "mason-org/mason-lspconfig.nvim",
-        lazy = true,
+        lazy = false,
         tag = not is_nvim_011 and "v1.32.0" or nil,
         config = function()
             if is_nvim_011 then
