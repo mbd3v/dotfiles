@@ -57,6 +57,10 @@ local ensure_installed = {
   "xml",
   "yaml",
   "zig",
+  "svelte",
+  "bibtex",
+  "graphql",
+  "toml",
 }
 
 local legacy_spec = {

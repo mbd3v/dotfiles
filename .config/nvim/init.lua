@@ -50,6 +50,7 @@
 --
 -- <leader>cc           Comment out line(s)
 -- <leader>cu           Uncomment line(s)
+-- <leader>cA           Append comment to the end of current line
 --
 
 

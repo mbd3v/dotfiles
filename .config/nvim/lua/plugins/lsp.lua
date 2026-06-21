@@ -71,6 +71,7 @@ return {
                 })
 
             else
+                -- This section is for neovim 0.12+
                 vim.lsp.config('gopls', {
                     settings = {
                         gopls = {

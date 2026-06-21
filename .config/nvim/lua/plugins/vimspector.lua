@@ -1,6 +1,7 @@
 return {
     {
         "puremourning/vimspector",
+        lazy = true,
         config = function()
             local keyset = vim.api.nvim_set_keymap
             -- vim.g.vimspector_enable_mappings = "HUMAN"

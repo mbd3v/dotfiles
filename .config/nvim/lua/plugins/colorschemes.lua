@@ -1,30 +1,28 @@
 return {
     {
         "tanvirtin/monokai.nvim",
-        lazy = false,
+        lazy = true,
         priority = 1000,
 
     },
     {
         "folke/tokyonight.nvim",
-        lazy = false,
+        lazy = true,
         priority = 1000,
         opts = {},
     },
     {
        "navarasu/onedark.nvim",
-        priority = 1000,
+        lazy = true,
         opts = {}
     },
     {
         "polirritmico/monokai-nightasty.nvim",
-        lazy = false,
-        priority = 1000,
+        lazy = true,
     },
     {
         "uhs-robert/oasis.nvim",
-        lazy = false,
-        priority = 1000,
+        lazy = true,
         config = function()
           require("oasis").setup()      -- (see Configuration below for all customization options)
             vim.o.background = "light"
@@ -33,11 +31,12 @@ return {
     {
         "sainnhe/sonokai",
         lazy = false,
-        priority = 1000,
-        config = function()
-            -- Load Colorscheme here
+        init = function()
             vim.g.sonokai_diagnostic_virtual_text = 'colored'
             vim.g.sonokai_better_performance = 0
+        end,
+        config = function()
+            -- Load Colorscheme here
             vim.cmd.colorscheme("sonokai") -- default colorscheme
         end
     }

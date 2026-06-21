@@ -11,6 +11,7 @@ local is_nvim_011 = vim.fn.has('nvim-0.11') == 1
 return {
     {
         "mason-org/mason.nvim",
+        lazy = true,
         tag = not is_nvim_011 and "v1.11.0" or nil,
         config = function()
             require("mason").setup({
@@ -28,6 +29,7 @@ return {
     },
     {
         "mason-org/mason-lspconfig.nvim",
+        lazy = true,
         tag = not is_nvim_011 and "v1.32.0" or nil,
         config = function()
             if is_nvim_011 then
@@ -43,6 +45,7 @@ return {
     {
         -- used for installing non standard mason registry LSPs (e.g. linters, LSPs from alternate registries)
         "WhoIsSethDaniel/mason-tool-installer.nvim",
+        lazy = true,
         --enabled = not is_nvim_011,
         config = function()
             require("mason-tool-installer").setup({
