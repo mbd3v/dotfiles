@@ -1,7 +1,6 @@
 return {
     {
         "folke/todo-comments.nvim",
-        lazy = true,
         dependencies = {
             "nvim-lua/plenary.nvim",
             'nvim-telescope/telescope.nvim',
@@ -12,8 +11,22 @@ return {
         config = function()
             local todo_plugin = require("todo-comments")
             todo_plugin.setup()
-            vim.api.nvim_set_keymap("n", "<leader>tt", ":TodoTelescope<CR>", {noremap = true})
-            vim.api.nvim_set_keymap("n", "<leader>tl", ":TodoLocList<CR>", {noremap = true})
-        end
+        end,
+        keys = {
+            {
+                "<leader>tt",
+                ":TodoTelescope<CR>",
+                mode = "n",
+                noremap = true,
+                desc = "Search for TODO comments throughout project using Telescope."
+            },
+            {
+                "<leader>tl",
+                ":TodoLocList<CR>",
+                mode = "n",
+                noremap = true,
+                desc = "Search for TODO comments throughout project and show in Loc List."
+            }
+        }
     },
 }

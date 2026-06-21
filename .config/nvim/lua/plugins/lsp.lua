@@ -156,8 +156,6 @@ return {
 
             vim.keymap.set("n", "K",  _G.show_docs, {noremap = true, silent = true})
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, {noremap = true, silent = true})
-            vim.keymap.set("n", "gi", require("telescope.builtin").lsp_implementations, {noremap = true, silent = true})
-            vim.keymap.set('n', 'gr', require("telescope.builtin").lsp_references, {noremap = true, silent = true})
             vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, {noremap = true, silent = true})
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {noremap = true, silent = true})
             vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {noremap = true, silent = true})

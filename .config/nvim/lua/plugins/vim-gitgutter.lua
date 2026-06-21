@@ -1,7 +1,7 @@
 return {
     {
         "airblade/vim-gitgutter",
-        lazy = true,
+        event = "VeryLazy",
         config = function()
             vim.api.nvim_create_autocmd("VimEnter", {
                 command = "GitGutterEnable"

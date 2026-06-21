@@ -24,13 +24,14 @@ return {
         "uhs-robert/oasis.nvim",
         lazy = true,
         config = function()
-          require("oasis").setup()      -- (see Configuration below for all customization options)
+            require("oasis").setup()      -- (see Configuration below for all customization options)
             vim.o.background = "light"
         end
     },
     {
         "sainnhe/sonokai",
         lazy = false,
+        priority = 1000,
         init = function()
             vim.g.sonokai_diagnostic_virtual_text = 'colored'
             vim.g.sonokai_better_performance = 0

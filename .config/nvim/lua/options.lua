@@ -39,11 +39,6 @@ vim.api.nvim_set_option_value("colorcolumn", "80", {})
 
 _G.enable_virtual_lines = false -- only works in neovim 0.11+
 
-vim.g.NERDCreateDefaultMappings = 0
-vim.api.nvim_set_keymap('n', '<leader>cc', '<Plug>NERDCommenterComment', {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>cu', '<Plug>NERDCommenterUncomment', {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>cA', '<Plug>NERDCommenterAppend', {noremap = true})
-
 
 
 -- Set tab width = 2 spaces for JS/TS files

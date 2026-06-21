@@ -4,17 +4,42 @@ return {
     "ryanoasis/vim-devicons",
     {
         "preservim/nerdcommenter",
-        lazy = true,
+        init = function()
+            vim.g.NERDCreateDefaultMappings = 0
+        end,
+        keys = {
+            {
+                "<leader>cc",
+                "<Plug>NERDCommenterComment",
+                mode = { "n", "x" },
+                noremap = true,
+                desc = "Comment current line or multiple lines in visual mode."
+            },
+            {
+                "<leader>cu",
+                "<Plug>NERDCommenterUncomment",
+                mode = { "n", "x" },
+                noremap = true,
+                desc = "Uncomment current line or multiple lines in visual mode."
+            },
+            {
+                "<leader>cA",
+                "<Plug>NERDCommenterAppend",
+                mode = "n",
+                noremap = true,
+                desc = "Append comment to the end of current line."
+            },
+        },
     },
     {
         "Xuyuanp/nerdtree-git-plugin",
-        lazy = true,
     },
     {"habamax/vim-asciidoctor", ft = {"adoc", "asciidoctor"}},
-    "nvim-lua/plenary.nvim",
     {
         "tpope/vim-fugitive",
-        lazy = true,
+        cmd = {
+            "Git",
+        },
     },
     {"mfussenegger/nvim-jdtls", ft = {"java"}},
 }

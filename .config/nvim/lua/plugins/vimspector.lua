@@ -1,9 +1,7 @@
 return {
     {
         "puremourning/vimspector",
-        lazy = true,
         config = function()
-            local keyset = vim.api.nvim_set_keymap
             -- vim.g.vimspector_enable_mappings = "HUMAN"
             vim.g.vimspector_install_gadgets = {
                 "debugpy", "vscode-cpptools", "CodeLLDB", "vscode-java-debug", "vscode-java-language-server"
@@ -20,19 +18,91 @@ return {
                 vimspectorCurrentFrame =    99997
             }
 
-            keyset("n", "<F2>", ":VimspectorReset<CR>", {noremap = true})
-            keyset("n", "<F3>", "<Plug>VimspectorStop", {noremap = true})
-            keyset("n", "<F4>", "<Plug>VimspectorRestart", {noremap = true})
-            keyset("n", "<F5>", "<Plug>VimspectorContinue", {noremap = true})
-            keyset("n", "<F6>", "<Plug>VimspectorPause", {noremap = true})
-            keyset("n", "<F8>", "<Plug>VimspectorAddFunctionBreakpoint", {noremap = true})
-            keyset("n", "<F9>", "<Plug>VimspectorToggleBreakpoint", {noremap = true})
-            keyset("n", "<leader><F9>", "<Plug>VimspectorDisassemble", {noremap = true})
-            keyset("n", "<F10>", "<Plug>VimspectorStepOver", {noremap = true})
-            keyset("n", "<F11>", "<Plug>VimspectorStepInto", {noremap = true})
-            keyset("n", "<F12>", "<Plug>VimspectorStepOut", {noremap = true})
-
-            keyset("n", "<leader>di", "<Plug>VimspectorBalloonEval", {})
-        end
+        end,
+        keys = {
+            {
+                "<F2>",
+                ":VimspectorReset<CR>",
+                mode = "n",
+                noremap = true,
+                desc = "Reset debugger."
+            },
+            {
+                "<F3>",
+                "<Plug>VimspectorStop",
+                mode = "n",
+                noremap = true,
+                desc = "Stop debugging."
+            },
+            {
+                "<F4>",
+                "<Plug>VimspectorRestart",
+                mode = "n",
+                noremap = true,
+                desc = "Restart debugger."
+            },
+            {
+                "<F5>",
+                "<Plug>VimspectorContinue",
+                mode = "n",
+                noremap = true,
+                desc = "Start/Continue debugging."
+            },
+            {
+                "<F6>",
+                "<Plug>VimspectorPause",
+                mode = "n",
+                noremap = true,
+                desc = "Pause debugger."
+            },
+            {
+                "<F8>",
+                "<Plug>VimspectorAddFunctionBreakpoint",
+                mode = "n",
+                noremap = true,
+                desc = "Add a *function* breakpoint for the expression."
+            },
+            {
+                "<F9>",
+                "<Plug>VimspectorToggleBreakpoint",
+                mode = "n",
+                noremap = true,
+                desc = "Toggle _line_ breakpoint or log point on the current line."
+            },
+            {
+                "<leader><F9>",
+                "<Plug>VimspectorDisassemble",
+                mode = "n",
+                noremap = true,
+                desc = "Show disassembly."
+            },
+            {
+                "<F10>",
+                "<Plug>VimspectorStepOver",
+                mode = "n",
+                noremap = true,
+                desc = "Debugger step over."
+            },
+            {
+                "<F11>",
+                "<Plug>VimspectorStepInto",
+                mode = "n",
+                noremap = true,
+                desc = "Debugger step into."
+            },
+            {
+                "<F12>",
+                "<Plug>VimspectorStepOut",
+                mode = "n",
+                noremap = true,
+                desc = "Debugger step out."
+            },
+            {
+                "<leader>di",
+                "<Plug>VimspectorBalloonEval",
+                mode = "n",
+                desc = "Debugger show balloon eval."
+            },
+        }
     },
 }
