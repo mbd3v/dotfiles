@@ -35,11 +35,5 @@ return {
         "Xuyuanp/nerdtree-git-plugin",
     },
     {"habamax/vim-asciidoctor", ft = {"adoc", "asciidoctor"}},
-    {
-        "tpope/vim-fugitive",
-        cmd = {
-            "Git",
-        },
-    },
     {"mfussenegger/nvim-jdtls", ft = {"java"}},
 }
