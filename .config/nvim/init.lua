@@ -39,8 +39,6 @@
 -- <leader>ff           Using telescope, fuzzy find files
 -- <leader>fg           Using telescope and ripgrep, fuzzy grep find text in files
 -- <leader>fb           Using telescope, fuzzy find open buffers
--- 
--- <leader>tb           (Vista) Toggles the Tagbar in the right sidebar
 --
 -- <leader>tt           (Todo-comments) Using Telescope, search through todos
 -- <leader>lt           (Todo-comments) Using Telescope, search through todos
