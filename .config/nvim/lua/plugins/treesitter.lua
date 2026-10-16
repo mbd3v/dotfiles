@@ -61,6 +61,7 @@ local ensure_installed = {
   "bibtex",
   "graphql",
   "toml",
+  "vhdl",
 }
 
 local legacy_spec = {

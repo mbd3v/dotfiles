@@ -122,4 +122,6 @@ autoload -U compinit; compinit
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
-cd ~
+# opencode
+export PATH=/home/viper/.opencode/bin:$PATH
+. "/home/viper/.deno/env"

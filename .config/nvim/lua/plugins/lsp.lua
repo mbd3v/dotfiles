@@ -80,6 +80,9 @@ return {
                         }
                     },
                 })
+
+                require("config.vhdl_ls_toml")
+
             end
             vim.g.go_recommended_style = 0
 

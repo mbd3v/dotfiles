@@ -7,10 +7,10 @@
 -- <leader> = ;
 --
 -- <CR>                 Command Completion
--- gd                   Go to Definition
--- gy                   Go to type definition
--- gi                   Go to implementation
--- gr                   Go to references
+-- <leader>gd           Go to Definition
+-- <leader>gy           Go to type definition
+-- <leader>gi           Go to implementation
+-- <leader>gr           Go to references
 -- <leader>rn           Rename variable
 -- K                    Shows documentation for function/var/type/whatever is
 --                            under your cursor in a nice little popup window. Note
@@ -95,6 +95,7 @@ local lazy_opts = {
         }
     }
 }
+
 
 require("lazy").setup("plugins", lazy_opts)
 
