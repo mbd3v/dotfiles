@@ -1,8 +1,8 @@
 local general_installed_lsps = {
     "lua_ls", "rust_analyzer", "clangd",
-    "pyright", "gopls", "ts_ls", "zls", "vimls", "vue_ls",
+    "pyright", "gopls", "tsc", "zls", "vimls",
     "glsl_analyzer", "rnix", "jdtls",
-    "omnisharp", "bashls", "ansiblels", "r_language_server", "svelte",
+    "omnisharp", "bashls", "ansiblels", "svelte",
     "texlab", "vhdl_ls"
 }
 

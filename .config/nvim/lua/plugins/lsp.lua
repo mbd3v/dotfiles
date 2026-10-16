@@ -84,6 +84,7 @@ return {
                 require("config.vhdl_ls_toml")
 
             end
+            require("config.pyproject_toml")
             vim.g.go_recommended_style = 0
 
             -- Other general lsp config settings
@@ -158,8 +159,8 @@ return {
             end
 
             vim.keymap.set("n", "K",  _G.show_docs, {noremap = true, silent = true})
-            vim.keymap.set("n", "gd", vim.lsp.buf.definition, {noremap = true, silent = true})
-            vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, {noremap = true, silent = true})
+            vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {noremap = true, silent = true})
+            vim.keymap.set('n', '<leader>gy', vim.lsp.buf.type_definition, {noremap = true, silent = true})
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {noremap = true, silent = true})
             vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {noremap = true, silent = true})
         end

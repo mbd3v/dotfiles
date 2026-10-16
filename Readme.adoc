@@ -1,21 +1,29 @@
 = How to install
 
-To install first clone the repo using: `git clone git@github.com:vipersniper0501/dotfiles.git $HOME/.dot_cfg`
- 
-Then, run `git --git-dir=/home/$USER/.dot_cfg/.git --work-tree=$HOME checkout -f`
+Clone the repo and run the setup script:
 
-Once the checkout is run, create a new session to see the newly applied settings
-in action.
+----
+git clone git@github.com:mbd3v/dotfiles.git $HOME/.dot_cfg
+$HOME/.dot_cfg/setup.sh
+----
 
-In order to check the status of the repository, run `dotfile_config` and use any git
-commands you should need.
+`setup.sh` symlinks each managed path from `$HOME` into the repo. `~/.config/nvim`
+is linked as a whole directory, so new nvim files show up in `git status` with no
+extra step. Anything already at a target path is moved to `<path>.bak.<timestamp>`
+first. Running it again is safe.
 
-For example, if you wanted to see the status of the dotfile repo, run 
-`dotfile_config status --untracked-files=no` to see what files have changed in 
-the repo (the `-u no` flag makes it so you don't see untracked files 
-that are not in the repo).
+To add a file, move it into the repo, add its path to the `links` list at the top
+of `setup.sh`, and rerun the script.
 
-If you wanted to add a file to the repo just run `dotfile_config add <file>` just
-like you would in any other repo and commit away.
+Some tools replace a symlink with a regular file when they save. Run
+`setup.sh --check` to list any managed path that is no longer linked, copy its
+contents back into the repo if needed, and rerun `setup.sh`.
+
+`setup.sh --root` copies the same files into `/root`. Root gets copies instead of
+links so root's nvim can't write root-owned files into the repo. Rerun it after
+changes you want root to have.
+
+The `dotfile_config` alias in `.zshrc` runs git against this repo from any
+directory, e.g. `dotfile_config status`.
 
 Instructions for configuring Tmux are found in the .tmux.conf file.

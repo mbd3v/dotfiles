@@ -97,10 +97,16 @@ local main_spec = {
     build = ":TSUpdate",
     init = function()
       vim.api.nvim_create_autocmd("FileType", {
-        callback = function()
+        callback = function(args)
           pcall(vim.treesitter.start)
-          vim.bo.indentexpr =
-            "v:lua.require'nvim-treesitter'.indentexpr()"
+          -- Only use treesitter indent when the language has an indents
+          -- query; otherwise it returns 0 for every line (e.g. vhdl).
+          local lang = vim.treesitter.language.get_lang(args.match)
+          local ok, query = pcall(vim.treesitter.query.get, lang, "indents")
+          if ok and query then
+            vim.bo.indentexpr =
+              "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
         end,
       })
 

@@ -16,7 +16,7 @@
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-alias dotfile_config="git --git-dir=$HOME/.dot_cfg/.git --work-tree=$HOME/.dot_cfg"
+alias dotfile_config="git -C $HOME/.dot_cfg"
 alias ll="ls -la --color=auto"
 alias ls="ls --color=auto"
 alias cd="z"
@@ -80,7 +80,7 @@ if [ -d /home/$USER/go/bin ]; then
 fi
 
 if [ -S /home/$USER/.bitwarden-ssh-agent.sock ]; then
-    export SSH_AUTH_SOCK=/home/$USER/.bitwarden-ssh-agent.sock
+    export SSH_AUTH_SOCK=/home/viper/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
 fi
 
 
@@ -125,3 +125,11 @@ eval "$(zoxide init zsh)"
 # opencode
 export PATH=/home/viper/.opencode/bin:$PATH
 . "/home/viper/.deno/env"
+
+# pnpm
+export PNPM_HOME='/home/viper/.local/share/pnpm'
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
