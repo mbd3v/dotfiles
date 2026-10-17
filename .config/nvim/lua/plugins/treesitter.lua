@@ -94,6 +94,7 @@ local legacy_spec = {
 local main_spec = {
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
     build = ":TSUpdate",
     init = function()
       vim.api.nvim_create_autocmd("FileType", {
