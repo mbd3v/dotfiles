@@ -13,7 +13,15 @@ extra step. Anything already at a target path is moved to `<path>.bak.<timestamp
 first. Running it again is safe.
 
 To add a file, move it into the repo, add its path to the `links` list at the top
-of `setup.sh`, and rerun the script.
+of `setup.sh`, and rerun the script. If the repo path differs from the home path,
+write the entry as `repo_path:home_path`.
+
+Claude Code skills and settings live in `claude/` and link into `~/.claude/`. The
+repo copy isn't called `.claude/`, because Claude Code would load it as project
+config whenever a session starts in this repo. To add a skill, move
+`~/.claude/skills/<name>` to `claude/skills/<name>` and add
+`claude/skills/<name>:.claude/skills/<name>` to `links`. `~/.claude/skills/synced`
+belongs to claude.ai and stays out of the repo.
 
 Some tools replace a symlink with a regular file when they save. Run
 `setup.sh --check` to list any managed path that is no longer linked, copy its
